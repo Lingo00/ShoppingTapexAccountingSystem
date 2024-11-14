@@ -1,0 +1,14 @@
+
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Add more CSS from your original file here */
