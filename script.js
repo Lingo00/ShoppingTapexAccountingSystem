@@ -1,18 +1,31 @@
-const loginTab = document.getElementById('loginTab');
-const registerTab = document.getElementById('registerTab');
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
-
-loginTab.addEventListener('click', () => {
-    loginTab.classList.add('active');
-    registerTab.classList.remove('active');
-    loginForm.style.display = 'block';
-    registerForm.style.display = 'none';
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const formToShow = tab.dataset.form;
+        document.querySelector('.login-form').style.display = formToShow === 'login' ? 'block' : 'none';
+        document.querySelector('.register-form').style.display = formToShow === 'register' ? 'block' : 'none';
+    });
 });
 
-registerTab.addEventListener('click', () => {
-    registerTab.classList.add('active');
-    loginTab.classList.remove('active');
-    registerForm.style.display = 'block';
-    loginForm.style.display = 'none';
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value;
+        const password = form.querySelector('input[type="password"]').value;
+        if (email && password) {
+            if (form.classList.contains('login-form')) {
+                window.location.href = 'dashboard.html';
+            } else {
+                const phone = form.querySelector('input[type="tel"]').value;
+                const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
+                if (phone && password === confirmPassword) {
+                    alert('تم إنشاء الحساب بنجاح');
+                    window.location.href = 'dashboard.html';
+                } else {
+                    form.querySelectorAll('.error-message').forEach(msg => msg.style.display = 'block');
+                }
+            }
+        }
+    });
 });
