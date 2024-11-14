@@ -3,55 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة شوبنق تابكس - تسجيل الدخول</title>
+    <title>شركة شوبنق تابكس - لوحة التحكم</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="auth-container">
-        <div class="logo">
-            <h1>شركة شوبنق تابكس</h1>
-            <p>نظام المحاسبة والتكاليف</p>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>شركة شوبنق تابكس</h1>
+                <p>نظام المحاسبة والتكاليف</p>
+            </div>
+            <div class="nav-item active">لوحة التحكم</div>
+            <div class="nav-item">التكاليف المباشرة</div>
+            <div class="nav-item">التكاليف غير المباشرة</div>
+            <div class="nav-item">تحليل التكاليف</div>
+            <div class="nav-item">إدارة المستخدمين</div>
+            <div class="nav-item">التقارير المحاسبية</div>
         </div>
-        <div class="tabs">
-            <div class="tab active" data-form="login">تسجيل الدخول</div>
-            <div class="tab" data-form="register">إنشاء حساب</div>
+        <div class="main-content">
+            <div class="dashboard-header">
+                <div class="welcome-text">مرحباً بك في لوحة التحكم</div>
+                <div class="date">23 يناير 2024</div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>إجمالي التكاليف</h3>
+                    <div class="value">875,430 ر.س</div>
+                </div>
+                <div class="stat-card">
+                    <h3>التكاليف المباشرة</h3>
+                    <div class="value">523,150 ر.س</div>
+                </div>
+                <div class="stat-card">
+                    <h3>التكاليف غير المباشرة</h3>
+                    <div class="value">352,280 ر.س</div>
+                </div>
+            </div>
+            <div class="costs-section">
+                <div class="cost-card">
+                    <h3>التكاليف المباشرة</h3>
+                    <ul class="cost-list">
+                        <li class="cost-item"><span>المواد الخام</span><span>250,000 ر.س</span></li>
+                        <li class="cost-item"><span>الأجور المباشرة</span><span>180,000 ر.س</span></li>
+                        <li class="cost-item"><span>تكاليف التصنيع</span><span>93,150 ر.س</span></li>
+                    </ul>
+                </div>
+                <div class="cost-card">
+                    <h3>التكاليف غير المباشرة</h3>
+                    <ul class="cost-list">
+                        <li class="cost-item"><span>المصاريف الإدارية</span><span>150,000 ر.س</span></li>
+                        <li class="cost-item"><span>مصاريف البيع والتوزيع</span><span>120,280 ر.س</span></li>
+                        <li class="cost-item"><span>مصاريف عمومية</span><span>82,000 ر.س</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="costsChart"></canvas>
+            </div>
         </div>
-        <form class="login-form">
-            <div class="form-group">
-                <label>البريد الإلكتروني</label>
-                <input type="email" required>
-                <div class="error-message">يرجى إدخال بريد إلكتروني صحيح</div>
-            </div>
-            <div class="form-group">
-                <label>كلمة المرور</label>
-                <input type="password" required>
-                <div class="error-message">يرجى إدخال كلمة المرور</div>
-            </div>
-            <button type="submit" class="btn">تسجيل الدخول</button>
-        </form>
-        <form class="register-form" style="display: none;">
-            <div class="form-group">
-                <label>البريد الإلكتروني</label>
-                <input type="email" required>
-                <div class="error-message">يرجى إدخال بريد إلكتروني صحيح</div>
-            </div>
-            <div class="form-group">
-                <label>رقم الهاتف</label>
-                <input type="tel" required>
-                <div class="error-message">يرجى إدخال رقم هاتف صحيح</div>
-            </div>
-            <div class="form-group">
-                <label>كلمة المرور</label>
-                <input type="password" required>
-                <div class="error-message">يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل</div>
-            </div>
-            <div class="form-group">
-                <label>تأكيد كلمة المرور</label>
-                <input type="password" required>
-                <div class="error-message">كلمات المرور غير متطابقة</div>
-            </div>
-            <button type="submit" class="btn">إنشاء حساب</button>
-        </form>
     </div>
     <script src="scripts.js"></script>
 </body>
