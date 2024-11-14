@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصميم حديث</title>
-    <!-- ربط ملف CSS -->
-    <link rel="stylesheet" href="style.css">
+    <title>شركة شوبنق تابكس - تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="auth-container">
         <div class="logo">
-            <img src="IMG_064894.jpg" alt="شعار">
+            <h1>شركة شوبنق تابكس</h1>
+            <p>نظام المحاسبة والتكاليف</p>
         </div>
         <div class="tabs">
-            <div class="tab active" id="loginTab">تسجيل دخول</div>
-            <div class="tab" id="registerTab">إنشاء حساب</div>
+            <div class="tab active" data-form="login">تسجيل الدخول</div>
+            <div class="tab" data-form="register">إنشاء حساب</div>
         </div>
-        <div id="forms">
-            <div id="loginForm" class="form">
-                <form>
-                    <div class="form-group">
-                        <label for="loginEmail">البريد الإلكتروني</label>
-                        <input type="email" id="loginEmail" placeholder="أدخل بريدك الإلكتروني">
-                        <div class="error">الرجاء إدخال بريد إلكتروني صحيح</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">كلمة المرور</label>
-                        <input type="password" id="loginPassword" placeholder="أدخل كلمة المرور">
-                        <div class="error">كلمة المرور مطلوبة</div>
-                    </div>
-                    <button type="submit" class="btn">تسجيل الدخول</button>
-                </form>
+        <form class="login-form">
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" required>
+                <div class="error-message">يرجى إدخال بريد إلكتروني صحيح</div>
             </div>
-            <div id="registerForm" class="form" style="display: none;">
-                <form>
-                    <div class="form-group">
-                        <label for="regEmail">البريد الإلكتروني</label>
-                        <input type="email" id="regEmail" placeholder="أدخل بريدك الإلكتروني">
-                        <div class="error">الرجاء إدخال بريد إلكتروني صحيح</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="regPhone">رقم الهاتف</label>
-                        <input type="tel" id="regPhone" placeholder="أدخل رقم الهاتف">
-                        <div class="error">الرجاء إدخال رقم هاتف صحيح</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="regPassword">كلمة المرور</label>
-                        <input type="password" id="regPassword" placeholder="أدخل كلمة المرور">
-                        <div class="error">يجب أن تكون كلمة المرور 8 أحرف على الأقل</div>
-                    </div>
-                    <button type="submit" class="btn">إنشاء حساب</button>
-                </form>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" required>
+                <div class="error-message">يرجى إدخال كلمة المرور</div>
             </div>
-        </div>
+            <button type="submit" class="btn">تسجيل الدخول</button>
+        </form>
+        <form class="register-form">
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" required>
+                <div class="error-message">يرجى إدخال بريد إلكتروني صحيح</div>
+            </div>
+            <div class="form-group">
+                <label>رقم الهاتف</label>
+                <input type="tel" required>
+                <div class="error-message">يرجى إدخال رقم هاتف صحيح</div>
+            </div>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" required>
+                <div class="error-message">يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل</div>
+            </div>
+            <div class="form-group">
+                <label>تأكيد كلمة المرور</label>
+                <input type="password" required>
+                <div class="error-message">كلمات المرور غير متطابقة</div>
+            </div>
+            <button type="submit" class="btn">إنشاء حساب</button>
+        </form>
     </div>
-
-    <!-- ربط ملف JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
