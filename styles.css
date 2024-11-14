@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+:root {
+  --primary: #000000;
+  --secondary: #1a1a1a;
+  --accent: #ffd700;
+  --light: #fffae6;
+  --success: #008000;
+  --warning: #ffd700;
+  --danger: #ff0000;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: var(--light);
+  color: black;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+.navbar, .footer {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--secondary);
+  position: fixed;
+  height: 100vh;
+  padding: 1rem;
+  color: white;
+}
+
+.menu-item {
+  margin: 1rem 0;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.menu-item:hover, .menu-item.active {
+  background: var(--accent);
+}
+
+.main-content {
+  margin-right: 250px;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
