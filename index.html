@@ -1,13 +1,65 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام محاسبي متكامل للتكاليف</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shopping Tabexi+ - نظام التكاليف المحاسبي</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <div class="logo">
+            <img src="IMG_064894.jpg" alt="Shopping Tabexi+ Logo - شعار شوبنق تابكس" width="200" height="100">
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" id="loginTab">تسجيل دخول</div>
+            <div class="tab" id="registerTab">إنشاء حساب</div>
+        </div>
+
+        <div class="form-container" id="loginForm">
+            <form onsubmit="return validateLoginForm(event)">
+                <div class="form-group">
+                    <label for="loginEmail">البريد الإلكتروني</label>
+                    <input type="email" id="loginEmail" required>
+                    <div class="error" id="loginEmailError">الرجاء إدخال بريد إلكتروني صحيح</div>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">كلمة المرور</label>
+                    <input type="password" id="loginPassword" required>
+                    <div class="error" id="loginPasswordError">كلمة المرور مطلوبة</div>
+                </div>
+                <button type="submit" class="btn">تسجيل الدخول</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="registerForm" style="display: none;">
+            <form onsubmit="return validateRegisterForm(event)">
+                <div class="form-group">
+                    <label for="regEmail">البريد الإلكتروني</label>
+                    <input type="email" id="regEmail" required>
+                    <div class="error" id="regEmailError">الرجاء إدخال بريد إلكتروني صحيح</div>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">رقم الهاتف</label>
+                    <input type="tel" id="regPhone" required>
+                    <div class="error" id="regPhoneError">الرجاء إدخال رقم هاتف صحيح</div>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">كلمة المرور</label>
+                    <input type="password" id="regPassword" required>
+                    <div class="error" id="regPasswordError">كلمة المرور يجب أن تحتوي على 8 أحرف على الأقل</div>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">تأكيد كلمة المرور</label>
+                    <input type="password" id="regConfirmPassword" required>
+                    <div class="error" id="regConfirmPasswordError">كلمات المرور غير متطابقة</div>
+                </div>
+                <button type="submit" class="btn">إنشاء حساب</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
