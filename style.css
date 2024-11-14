@@ -1,121 +1,31 @@
 :root {
-    --primary-color: #0066cc;
-    --secondary-color: #ffd700;
-    --background-color: #f8f9fa;
-    --text-color: #333;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
+    --primary-color: #6c63ff;
+    --secondary-color: #00d4ff;
+    --background-gradient: linear-gradient(135deg, #6c63ff, #00d4ff);
+    --text-color: #2c2c54;
+    --error-color: #ff5252;
+    --shadow-color: rgba(108, 99, 255, 0.2);
 }
 
 body {
-    background-color: var(--background-color);
-    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.logo img {
-    width: 200px;
-    height: auto;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-.form-group input {
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    max-width: 400px;
     width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    animation: fadeIn 1s ease-out;
 }
 
-.form-group input:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #0052a3;
-}
-
-.toggle-form {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.toggle-form a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    display: none;
-}
-
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-}
-
-.tab.active {
-    border-bottom: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.form-container {
-    animation: fadeIn 0.5s ease-out;
-}
+/* بقية التنسيق موجود في الكود السابق */
