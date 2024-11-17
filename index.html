@@ -239,3 +239,46 @@ document.querySelectorAll('input').forEach(input => {
 });
 </script>
 </body></html>
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول</title>
+  <script>
+    function login(event) {
+      event.preventDefault(); // منع إعادة تحميل الصفحة
+
+      // بيانات تسجيل الدخول الصحيحة
+      const correctEmail = "azam@a.com";
+      const correctPassword = "Aa112233";
+
+      // الحصول على مدخلات المستخدم
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // التحقق من صحة البيانات
+      if (email === correctEmail && password === correctPassword) {
+        // التوجيه إلى الصفحة index2.html
+        window.location.href = "index2.html";
+      } else {
+        // عرض رسالة خطأ
+        alert("البريد الإلكتروني أو كلمة المرور غير صحيحة!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>تسجيل الدخول</h2>
+  <form onsubmit="login(event)">
+    <label for="email">البريد الإلكتروني:</label><br>
+    <input type="email" id="email" placeholder="example@email.com" required><br><br>
+
+    <label for="password">كلمة المرور:</label><br>
+    <input type="password" id="password" placeholder="********" required><br><br>
+
+    <button type="submit">تسجيل الدخول</button>
+  </form>
+</body>
+</html>
