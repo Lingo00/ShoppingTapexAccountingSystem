@@ -18,7 +18,7 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 100%; /* Adjusted for mobile */
+  width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -92,8 +92,8 @@ body {
   font-size: 30px;
   cursor: pointer;
   position: fixed;
-  top: 10px; /* Adjusted for mobile */
-  right: 10px; /* Adjusted for mobile */
+  top: 20px;
+  right: 20px;
   background: #f4a261; /* Match sidebar color */
   padding: 10px 15px;
   border-radius: 5px;
@@ -120,21 +120,21 @@ body {
 }
 
 .main-content.shifted {
-  margin-right: 0; /* Adjusted for mobile */
+  margin-right: 250px;
 }
 
 .kpi-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 15px; /* Adjusted spacing */
-  margin-top: 80px; /* Adjusted for mobile */
-  padding: 10px; /* Adjusted for mobile */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 100px;
+  padding: 20px;
 }
 
 .kpi-card {
   background: #ffffff; /* Pure white */
   border-radius: 10px;
-  padding: 15px; /* Adjusted for mobile */
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   text-align: center;
 }
@@ -147,35 +147,33 @@ body {
 
 .kpi-value {
   color: #1a365d; /* Changed from #f4a261 to dark navy */
-  font-size: 20px; /* Adjusted for mobile */
+  font-size: 24px;
   font-weight: bold;
 }
 
 .charts-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 15px; /* Adjusted spacing */
-  margin-top: 15px; /* Adjusted for mobile */
-  padding: 10px; /* Adjusted for mobile */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
 }
 
 .chart-card {
   background: #ffffff; /* Pure white */
   border-radius: 10px;
-  min-height: 300px; /* Set minimum height for mobile readability */
-  padding: 10px; /* Adjusted for mobile */
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 /* Adding new styles for notifications and search */
 .notification-panel {
   position: fixed;
-  left: 0; /* Adjusted for mobile */
-  top: 0; /* Adjusted for mobile */
-  width: 100%; /* Full screen width on mobile */
-  height: 100%; /* Full screen height on mobile */
+  left: 20px;
+  top: 20px;
+  width: 300px;
   background: #ffffff; /* Pure white */
-  border-radius: 0; /* Removed rounded corners for mobile */
+  border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   z-index: 1000;
   transform: translateX(0);
@@ -183,7 +181,7 @@ body {
 }
 
 .notification-panel.hidden {
-  transform: translateX(-100%); /* Changed to hide off-screen */
+  transform: translateX(-330px);
 }
 
 .notification-header {
@@ -239,9 +237,9 @@ body {
 
 .search-container {
   position: fixed;
-  top: 70px; /* Adjusted for mobile */
-  left: 10px; /* Adjusted for mobile */
-  right: 10px; /* Adjusted for mobile */
+  top: 20px;
+  left: 340px;
+  right: 80px;
   z-index: 1000;
 }
 
@@ -264,8 +262,8 @@ body {
 /* Add styles for notifications toggle button */
 .notifications-toggle {
   position: fixed;
-  left: 10px; /* Adjusted for mobile */
-  top: 20px; /* Adjusted for mobile */
+  left: 20px;
+  top: 20px;
   background: #f4a261; /* Light orange */
   color: white;
   padding: 10px 15px;
@@ -283,8 +281,8 @@ body {
 .activity-log {
   background: #ffffff; /* Pure white */
   border-radius: 10px;
-  padding: 15px; /* Adjusted for mobile */
-  margin: 10px; /* Adjusted for mobile */
+  padding: 20px;
+  margin: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
@@ -299,7 +297,7 @@ body {
 .activity-item {
   display: flex;
   align-items: center;
-  padding: 10px 0; /* Adjusted for mobile */
+  padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -351,12 +349,11 @@ body {
 /* Add new footer styles */
 .footer {
   background: #ffffff;
-  padding: 15px; /* Adjusted for mobile */
+  padding: 20px;
   text-align: center;
   margin-top: 40px;
   border-top: 1px solid #eee;
   color: #1a365d;
-  font-size: 14px; /* Adjusted for mobile */
 }
 
 .footer a {
@@ -366,33 +363,6 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
-}
-
-/* Add responsive media queries */
-@media screen and (max-width: 768px) {
-  .kpi-card {
-    padding: 15px;
-  }
-  
-  .kpi-value {
-    font-size: 20px;
-  }
-  
-  .hamburger {
-    top: 10px;
-    right: 10px;
-  }
-  
-  .footer {
-    padding: 15px;
-    font-size: 14px;
-  }
-}
-
-/* General adjustments on mobile */
-.chart-card {
-  min-height: 300px;
-  padding: 10px;
 }
 </style>
 </head>
@@ -679,7 +649,6 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -687,13 +656,6 @@ document.addEventListener('DOMContentLoaded', function() {
           font: {
             size: 16,
             family: 'Cairo'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          labels: {
-            boxWidth: 12,
-            padding: 10
           }
         }
       }
@@ -719,7 +681,6 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
       plugins: {
         title: {
           display: true,
@@ -727,13 +688,6 @@ document.addEventListener('DOMContentLoaded', function() {
           font: {
             size: 16,
             family: 'Cairo'
-          }
-        },
-        legend: {
-          position: 'bottom',
-          labels: {
-            boxWidth: 12,
-            padding: 10
           }
         }
       }
