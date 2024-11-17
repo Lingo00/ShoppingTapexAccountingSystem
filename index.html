@@ -12,7 +12,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    background: linear-gradient(135deg, #673AB7 0%, #9C27B0 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #FF6B6B, #FF8E53, #FFA07A);
+    background: linear-gradient(90deg, #9C27B0, #673AB7, #3F51B5);
 }
 
 .logo {
@@ -67,7 +67,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #FF6B6B;
+    color: #673AB7;
     font-weight: bold;
     font-size: 0.95rem;
 }
@@ -94,15 +94,15 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+    background: linear-gradient(45deg, #9C27B0, #673AB7);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #FF5252, #FF7043);
+    background: linear-gradient(45deg, #8E24AA, #5E35B1);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
 }
 
 .divider {
@@ -125,7 +125,7 @@ body {
 .divider span {
     background: white;
     padding: 0 1rem;
-    color: #FF6B6B;
+    color: #673AB7;
     font-weight: bold;
     position: relative;
     z-index: 2;
@@ -133,25 +133,25 @@ body {
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, #FF8E53, #FFA07A);
+    background: linear-gradient(45deg, #673AB7, #3F51B5);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 142, 83, 0.3);
+    box-shadow: 0 4px 15px rgba(103, 58, 183, 0.3);
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(45deg, #FF7043, #FF8F65);
+    background: linear-gradient(45deg, #5E35B1, #3949AB);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 142, 83, 0.4);
+    box-shadow: 0 6px 20px rgba(103, 58, 183, 0.4);
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #FF6B6B;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    border-color: #673AB7;
+    box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.2);
 }
 
 .error-message {
-    color: #FF5252;
+    color: #F44336;
     margin-top: 0.5rem;
     font-size: 0.85rem;
     display: none;
@@ -234,7 +234,7 @@ document.querySelectorAll('.btn').forEach(button => {
 
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', function() {
-        this.style.borderColor = this.value.length > 0 ? '#FF6B6B' : '#e0e0e0';
+        this.style.borderColor = this.value.length > 0 ? '#673AB7' : '#e0e0e0';
     });
 });
 </script>
