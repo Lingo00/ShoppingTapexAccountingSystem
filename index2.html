@@ -1,19 +1,8 @@
-<html><head><base href="/" />
+<html><head><base href="https://www.husscosteel.com" />
 <meta charset="UTF-8">
-<title>نظام المحاسبة المتكامل</title>
+<title>نظام المحاسبة المتطور</title>
+<link rel="icon" type="image/x-icon" href="/IMG_0.jpg">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-:root {
-  --primary: #2c3e50;
-  --secondary: #34495e;
-  --accent: #3498db;
-  --light: #ecf0f1;
-  --success: #2ecc71;
-  --warning: #f1c40f;
-  --danger: #e74c3c;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -22,194 +11,182 @@
 }
 
 body {
+  background: #f0f2f5;
   direction: rtl;
-  background: var(--light);
 }
 
-.navbar {
-  background: var(--primary);
-  padding: 1rem;
-  color: white;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.sidebar {
-  width: 250px;
-  background: var(--secondary);
-  height: calc(100vh - 60px);
-  position: fixed;
-  padding: 1rem;
-}
-
-.menu-item {
   color: white;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(26, 35, 126, 0.2);
 }
 
-.menu-item:hover {
-  background: var(--accent);
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.main-content {
-  margin-right: 250px;
-  padding: 2rem;
+.header img {
+  border-radius: 15px;
+  border: 3px solid #fff;
 }
 
-.dashboard-grid {
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
-.card {
+.feature-card {
   background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-.button {
-  background: var(--accent);
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(26, 35, 126, 0.15);
+  border-color: #1a237e;
+}
+
+.feature-card h3 {
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-size: 22px;
+  position: relative;
+  padding-right: 25px;
+}
+
+.feature-card h3::before {
+  content: "◆";
+  color: #4CAF50;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.feature-card ul {
+  list-style: none;
+  padding-right: 25px;
+}
+
+.feature-card li {
+  color: #455a64;
+  margin-bottom: 12px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.feature-card li::before {
+  content: "←";
+  color: #4CAF50;
+  position: absolute;
+  right: -25px;
+  top: 0;
+  font-weight: bold;
+}
+
+.get-started {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
   color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
 }
 
-.button:hover {
-  opacity: 0.9;
+.start-button:hover {
+  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
 }
 
-.chart-container {
-  height: 300px;
-  margin: 1rem 0;
-}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.start-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'go.html';
+    });
+});
+</script>
 </head>
 <body>
-
-<nav class="navbar">
-  <h1>نظام المحاسبة المتكامل</h1>
-  <div class="user-info">
-    مرحباً، محمد أحمد
-    <button class="button">تسجيل خروج</button>
-  </div>
-</nav>
-
-<aside class="sidebar">
-  <div class="menu-item">لوحة التحكم</div>
-  <div class="menu-item">العمليات المحاسبية</div>
-  <div class="menu-item">إدارة الحسابات</div>
-  <div class="menu-item">الفواتير والمدفوعات</div>
-  <div class="menu-item">التقارير المالية</div>
-  <div class="menu-item">إدارة الضرائب</div>
-  <div class="menu-item">التحليلات المالية</div>
-  <div class="menu-item">إعدادات النظام</div>
-</aside>
-
-<main class="main-content">
-  <div class="dashboard-grid">
-    <div class="card">
-      <h3>إجمالي الإيرادات</h3>
-      <div class="chart-container">
-        <canvas id="revenueChart"></canvas>
-      </div>
+<div class="container">
+  <header class="header">
+    <div class="header-logo">
+      <img src="/IMG_0.jpg" alt="شعار نظام المحاسبة المتطور" width="70" height="70">
+      <h1>نظام المحاسبة المتطور</h1>
     </div>
-    
-    <div class="card">
-      <h3>المصروفات الشهرية</h3>
-      <div class="chart-container">
-        <canvas id="expensesChart"></canvas>
-      </div>
+  </header>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>عرض البيانات المبسط</h3>
+      <ul>
+        <li>واجهة سهلة الاستخدام</li>
+        <li>عرض المعلومات المالية بوضوح</li>
+        <li>لوحات تحكم تفاعلية</li>
+      </ul>
     </div>
-    
-    <div class="card">
-      <h3>الفواتير المستحقة</h3>
-      <div class="chart-container">
-        <canvas id="invoicesChart"></canvas>
-      </div>
+
+    <div class="feature-card">
+      <h3>إدارة العمليات المحاسبية</h3>
+      <ul>
+        <li>إدارة حسابات العملاء والموردين</li>
+        <li>تسجيل القيود اليومية</li>
+        <li>إدارة الدفاتر المحاسبية</li>
+        <li>تصنيف المصاريف والإيرادات</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h3>التكامل مع الأنظمة</h3>
+      <ul>
+        <li>ربط مع أنظمة المبيعات والمشتريات</li>
+        <li>تكامل مع منصات الدفع الإلكتروني</li>
+        <li>تحديث تلقائي للبيانات المالية</li>
+      </ul>
     </div>
   </div>
-</main>
 
-<script>
-// تهيئة الرسوم البيانية
-const charts = {
-  revenue: new Chart(document.getElementById('revenueChart'), {
-    type: 'line',
-    data: {
-      labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
-      datasets: [{
-        label: 'الإيرادات',
-        data: [12000, 19000, 15000, 25000, 22000, 30000],
-        borderColor: '#2ecc71',
-        tension: 0.1
-      }]
-    }
-  }),
-  
-  expenses: new Chart(document.getElementById('expensesChart'), {
-    type: 'bar',
-    data: {
-      labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
-      datasets: [{
-        label: 'المصروفات',
-        data: [8000, 12000, 9000, 15000, 13000, 18000],
-        backgroundColor: '#e74c3c'
-      }]
-    }
-  }),
-  
-  invoices: new Chart(document.getElementById('invoicesChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['مدفوعة', 'مستحقة', 'متأخرة'],
-      datasets: [{
-        data: [60, 30, 10],
-        backgroundColor: ['#2ecc71', '#f1c40f', '#e74c3c']
-      }]
-    }
-  })
-};
-
-// إضافة التفاعلية للقائمة
-document.querySelectorAll('.menu-item').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.menu-item').forEach(i => i.style.background = 'transparent');
-    item.style.background = 'var(--accent)';
-  });
-});
-
-// نظام التنبيهات
-function showNotification(message) {
-  const notification = document.createElement('div');
-  notification.style.cssText = `
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: var(--success);
-    color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    z-index: 1000;
-  `;
-  notification.textContent = message;
-  document.body.appendChild(notification);
-  setTimeout(() => notification.remove(), 3000);
-}
-
-// مثال على التنبيهات
-setTimeout(() => {
-  showNotification('لديك 3 فواتير مستحقة الدفع');
-}, 2000);
-</script>
-</body></html>
+  <div class="get-started">
+    <a href="go.html" class="start-button">ابدأ الآن</a>
+  </div>
+</div>
+</body>
+</html>
