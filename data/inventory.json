@@ -1,7 +1,0 @@
-{
-  "inventory": [
-    { "id": 1, "product": "الحديد الخام", "quantity": 500 },
-    { "id": 2, "product": "الصلب المصنع", "quantity": 200 },
-    { "id": 3, "product": "الألومنيوم", "quantity": 100 }
-  ]
-}
