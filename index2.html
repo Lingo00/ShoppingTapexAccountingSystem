@@ -1,0 +1,192 @@
+<html><head><base href="https://www.husscosteel.com" />
+<meta charset="UTF-8">
+<title>نظام المحاسبة المتطور</title>
+<link rel="icon" type="image/x-icon" href="/IMG_0.jpg">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  direction: rtl;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(26, 35, 126, 0.2);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header img {
+  border-radius: 15px;
+  border: 3px solid #fff;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(26, 35, 126, 0.15);
+  border-color: #1a237e;
+}
+
+.feature-card h3 {
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-size: 22px;
+  position: relative;
+  padding-right: 25px;
+}
+
+.feature-card h3::before {
+  content: "◆";
+  color: #4CAF50;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.feature-card ul {
+  list-style: none;
+  padding-right: 25px;
+}
+
+.feature-card li {
+  color: #455a64;
+  margin-bottom: 12px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.feature-card li::before {
+  content: "←";
+  color: #4CAF50;
+  position: absolute;
+  right: -25px;
+  top: 0;
+  font-weight: bold;
+}
+
+.get-started {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.start-button:hover {
+  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.start-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'go.html';
+    });
+});
+</script>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="header-logo">
+      <img src="/IMG_0.jpg" alt="شعار نظام المحاسبة المتطور" width="70" height="70">
+      <h1>نظام المحاسبة المتطور</h1>
+    </div>
+  </header>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>عرض البيانات المبسط</h3>
+      <ul>
+        <li>واجهة سهلة الاستخدام</li>
+        <li>عرض المعلومات المالية بوضوح</li>
+        <li>لوحات تحكم تفاعلية</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h3>إدارة العمليات المحاسبية</h3>
+      <ul>
+        <li>إدارة حسابات العملاء والموردين</li>
+        <li>تسجيل القيود اليومية</li>
+        <li>إدارة الدفاتر المحاسبية</li>
+        <li>تصنيف المصاريف والإيرادات</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <h3>التكامل مع الأنظمة</h3>
+      <ul>
+        <li>ربط مع أنظمة المبيعات والمشتريات</li>
+        <li>تكامل مع منصات الدفع الإلكتروني</li>
+        <li>تحديث تلقائي للبيانات المالية</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="get-started">
+    <a href="go.html" class="start-button">ابدأ الآن</a>
+  </div>
+</div>
+</body>
+</html>
