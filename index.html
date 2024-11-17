@@ -1,0 +1,241 @@
+<html><head><base href="." /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة تحكم | Shopping TABEXI+</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2196F3 0%, #00BCD4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #00BCD4, #03A9F4, #2196F3);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0288D1;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #03A9F4, #00BCD4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(3, 169, 244, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #039BE5, #00ACC1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(3, 169, 244, 0.4);
+}
+
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bdbdbd, transparent);
+    z-index: 1;
+}
+
+.divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #0288D1;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #00BCD4, #009688);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #00ACC1, #00897B);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #03A9F4;
+    box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.2);
+}
+
+.error-message {
+    color: #F44336;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    display: none;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="/IMG_0.jpg" alt="Shopping TABEXI+ Logo" width="180" height="74">
+        </div>
+        
+        <form id="loginForm" onsubmit="return handleSubmit(event)">
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error-message">البريد الإلكتروني غير صحيح</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+                <div id="passwordError" class="error-message">كلمة المرور غير صحيحة</div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+            
+            <div class="divider">
+                <span>أو</span>
+            </div>
+            
+            <button type="button" class="btn btn-secondary" onclick="redirectToSignup()">إنشاء حساب جديد</button>
+        </form>
+    </div>
+
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    document.getElementById('emailError').style.display = 'none';
+    document.getElementById('passwordError').style.display = 'none';
+    
+    if (email === 'azam@a.com' && password === 'Aa112233') {
+        window.location.href = 'https://www.husscosteel.com/index2.html';
+    } else {
+        if (email !== 'azam@a.com') {
+            document.getElementById('emailError').style.display = 'block';
+        }
+        if (password !== 'Aa112233') {
+            document.getElementById('passwordError').style.display = 'block';
+        }
+    }
+}
+
+function redirectToSignup() {
+    window.location.href = 'https://www.husscosteel.com/signup';
+}
+
+document.querySelectorAll('.btn').forEach(button => {
+    ['mousedown', 'mouseup', 'mouseleave'].forEach(event => {
+        button.addEventListener(event, function() {
+            if (event === 'mousedown') {
+                this.style.transform = 'scale(0.98) translateY(-1px)';
+            } else {
+                this.style.transform = 'translateY(-2px)';
+            }
+        });
+    });
+});
+
+document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', function() {
+        this.style.borderColor = this.value.length > 0 ? '#03A9F4' : '#e0e0e0';
+    });
+});
+</script>
+</body></html>
