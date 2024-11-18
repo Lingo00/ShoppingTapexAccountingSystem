@@ -1,5 +1,5 @@
 <html><head><base href="." /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لوحة تحكم | Shopping TABEXI+</title>
+<title>لوحة تحكم | HUSSCO FOR STEEL</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
@@ -12,7 +12,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    background: linear-gradient(135deg, #e53935 0%, #ff1744 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -29,6 +29,7 @@ body {
     max-width: 400px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .login-container::before {
@@ -38,7 +39,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #FF6B6B, #FF8E53, #FFA07A);
+    background: linear-gradient(90deg, #d32f2f, #c62828, #b71c1c);
 }
 
 .logo {
@@ -62,28 +63,34 @@ body {
 .form-group {
     margin-bottom: 1.5rem;
     position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 0.5rem;
-    color: #FF6B6B;
+    color: #d32f2f;
     font-weight: bold;
     font-size: 0.95rem;
 }
 
 .form-group input {
     width: 100%;
+    max-width: 300px;
     padding: 0.8rem 1rem;
     border: 2px solid #e0e0e0;
     border-radius: 15px;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn {
     width: 100%;
+    max-width: 300px;
     padding: 1rem;
     border: none;
     border-radius: 15px;
@@ -91,24 +98,26 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 auto;
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+    background: linear-gradient(45deg, #d32f2f, #ff1744);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #FF5252, #FF7043);
+    background: linear-gradient(45deg, #c62828, #d50000);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
 }
 
 .divider {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
     position: relative;
+    max-width: 300px;
 }
 
 .divider::before {
@@ -125,7 +134,7 @@ body {
 .divider span {
     background: white;
     padding: 0 1rem;
-    color: #FF6B6B;
+    color: #d32f2f;
     font-weight: bold;
     position: relative;
     z-index: 2;
@@ -133,29 +142,30 @@ body {
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, #FF8E53, #FFA07A);
+    background: linear-gradient(45deg, #ff1744, #d50000);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 142, 83, 0.3);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(45deg, #FF7043, #FF8F65);
+    background: linear-gradient(45deg, #d32f2f, #c62828);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 142, 83, 0.4);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #FF6B6B;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
 }
 
 .error-message {
-    color: #FF5252;
+    color: #d32f2f;
     margin-top: 0.5rem;
     font-size: 0.85rem;
     display: none;
     animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    text-align: center;
 }
 
 @keyframes shake {
@@ -168,7 +178,7 @@ body {
 <body>
     <div class="login-container">
         <div class="logo">
-            <img src="/IMG_0.jpg" alt="Shopping TABEXI+ Logo" width="180" height="74">
+            <img src="/IMG_0.PNG" alt="HUSSCO FOR STEEL STRUCTURES CO. LTD Logo - circular gear logo with company name in English and Arabic and red stylized S" width="180" height="180">
         </div>
         
         <form id="loginForm" onsubmit="return handleSubmit(event)">
@@ -234,7 +244,7 @@ document.querySelectorAll('.btn').forEach(button => {
 
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', function() {
-        this.style.borderColor = this.value.length > 0 ? '#FF6B6B' : '#e0e0e0';
+        this.style.borderColor = this.value.length > 0 ? '#d32f2f' : '#e0e0e0';
     });
 });
 </script>
