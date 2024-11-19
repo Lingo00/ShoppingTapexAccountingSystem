@@ -1,6 +1,6 @@
 <?php
 include('../includes/db.php');
-
+header('Content-Type: text/html; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $client_name = $_POST['client_name'];
     $amount = $_POST['amount'];
